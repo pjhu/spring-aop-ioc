@@ -1,7 +1,6 @@
 package com.pjhu.aopioc.test;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 public class M587TwoSum {
 
@@ -9,7 +8,7 @@ public class M587TwoSum {
 
     }
 
-    private static int solution(int[] a, int target) {
+    private static int solution1(int[] a, int target) {
         Arrays.sort(a);
         int left =0;
         int right = a.length-1;
@@ -34,5 +33,28 @@ public class M587TwoSum {
             }
         }
         return count;
+    }
+
+    public static int solution2(int[] a, int target) {
+
+        int j = a.length -1;
+        int rst = 0;
+        Arrays.sort(a);
+        for (int i=0;i<a.length;i++) {
+
+            int v = a[i] + a[j];
+
+            if (i>0 &&  a[i] == a[i-1]){
+                continue;
+            }
+
+            while (i<j  && v > target) {
+                --j;
+            }
+            if (v == target) {
+                rst++;
+            }
+        }
+        return rst;
     }
 }

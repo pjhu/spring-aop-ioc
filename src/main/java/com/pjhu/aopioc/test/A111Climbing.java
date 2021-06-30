@@ -1,18 +1,11 @@
 package com.pjhu.aopioc.test;
 
 // 111-爬楼梯，每次只能爬一步或两步, 爬到顶部有多少种方法
+// https://zhuanlan.zhihu.com/p/91582909 DP问题
 public class A111Climbing {
 
     public static void main(String[] args) {
-        System.out.println(solution1(2));
         System.out.println(solution2(2));
-    }
-    
-    private static int solution1(int n) {
-        if (n < 3) {
-            return n;
-        }
-        return solution1(n-1) + solution1(n-2);
     }
 
     private static int solution2(int n) {

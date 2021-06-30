@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 public class A918ThreeSum {
     public static void main(String[] args) {
-        int[] a = new int[] {-2,0,-1,3};
-        int result = solution(a, 2);
+        Integer[] a = new Integer[] {-2,0,-1,3};
+        Integer result = solution(a, 2);
         System.out.println(result);
     }
 
     // 3个数之和小于某个值
-    private static int solution(int[] a, int target) {
+    private static int solution(Integer[] a, Integer target) {
 
         int ant = 0;
         Arrays.sort(a);

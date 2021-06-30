@@ -26,11 +26,10 @@ public class A104MergeKList {
         }
 
         ListNode dummy = new ListNode(-1);
-        ListNode tail = dummy;
 
         while (!pq.isEmpty()) {
             ListNode head = pq.poll();
-            tail.next = head;
+            dummy.next = head;
             if (head.next != null) {
                 pq.offer(head.next);
             }

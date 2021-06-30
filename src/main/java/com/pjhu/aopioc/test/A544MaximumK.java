@@ -6,7 +6,8 @@ import java.util.PriorityQueue;
 public class A544MaximumK {
 
     public static void main(String[] args) {
-
+        int[] a = {2, 3, 5, 6, 7};
+        solution1(a, 3);
     }
 
     private static int[] solution1(int[] a, int k) {
@@ -33,12 +34,9 @@ public class A544MaximumK {
         return result;
     }
 
-    private static void solution2(int[] a, int start, int end, int k) {
-        if (start > k) {
-            return;
-        }
-        if (start >= end) {
-            return;
+    private static int solution2(int[] a, int start, int end, int k) {
+        if (start >= end ) {
+            return a[k];
         }
 
         int left = start;
@@ -64,7 +62,11 @@ public class A544MaximumK {
             }
         }
 
-        solution2(a, start, right, k);
-        solution2(a, left, end, k);
+        if (k <= right)  {
+            solution2(a, start, right, k);
+        } else {
+            solution2(a, left, end, k);
+        }
+        return a[k];
     }
 }
